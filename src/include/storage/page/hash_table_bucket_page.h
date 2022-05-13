@@ -142,7 +142,8 @@ class HashTableBucketPage {
   char occupied_[(BUCKET_ARRAY_SIZE - 1) / 8 + 1];
   // 0 if tombstone/brand new (never occupied), 1 otherwise.
   char readable_[(BUCKET_ARRAY_SIZE - 1) / 8 + 1];
-  MappingType array_[0];
+  template <typename KeyType, typename ValueType, typename KeyComparator>
+  multimap<typename KeyType, typename ValueType, typename KeyComparator> array_[];
 };
 
 }  // namespace bustub

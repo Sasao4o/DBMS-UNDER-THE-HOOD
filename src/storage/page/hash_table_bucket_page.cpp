@@ -26,7 +26,11 @@ bool HASH_TABLE_BUCKET_TYPE::GetValue(KeyType key, KeyComparator cmp, std::vecto
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
 bool HASH_TABLE_BUCKET_TYPE::Insert(KeyType key, ValueType value, KeyComparator cmp) {
+     _array.insert(pair<key,value>(key,value));
+     
+  
   return true;
+  
 }
 
 template <typename KeyType, typename ValueType, typename KeyComparator>
